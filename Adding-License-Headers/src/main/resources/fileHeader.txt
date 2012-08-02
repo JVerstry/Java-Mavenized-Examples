@@ -1,0 +1,1 @@
+Copyright (C) ${h_inceptionYear}-${h_currentYear} ${h_copyrightOwner} - All rights reserved.
