@@ -14,10 +14,10 @@ import org.xml.sax.SAXException;
 
 public class DOM {
 	
-	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+	public static void main(String[] args) throws ParserConfigurationException,
+			SAXException, IOException {
 		
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		
 		DocumentBuilder builder = factory.newDocumentBuilder();
 		
 		InputStream IS = DOM.class.getResourceAsStream("/rates.xml");

@@ -1,8 +1,6 @@
 
 package com.jverstry.stax;
 
-import com.jverstry.crud.DOM;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Iterator;
@@ -43,7 +41,7 @@ public class StAX {
 						
 					}
 					
-					event = eventReader.nextEvent();
+					eventReader.nextEvent();
 					System.out.println("");
 					
 					continue;
