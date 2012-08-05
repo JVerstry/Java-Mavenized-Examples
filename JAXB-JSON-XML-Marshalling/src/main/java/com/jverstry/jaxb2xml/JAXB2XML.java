@@ -1,7 +1,6 @@
 
 package com.jverstry.jaxb2xml;
 
-import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
@@ -11,9 +10,7 @@ import javax.xml.bind.Unmarshaller;
 
 public class JAXB2XML {
 
-	// private static final String BOOKSTORE_XML = "./bookstore-jaxb.xml";
-
-	public static void main(String[] args) throws JAXBException, IOException {
+	public static void main(String[] args) throws JAXBException {
 
 		Book book = new Book();
 		book.setTitle("Book title");
