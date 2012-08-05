@@ -1,6 +1,9 @@
-Java-XML-Processing
+JAXB-XML-Processing
 ===================
 
-A sample maven project describing how to parse and create XML documents.
+A sample maven project describing how to Marshall/Unmarshall JAXB annotated POJOs into XML and JSON documents.
 
-For more information, see: http://tshikatshikaaa.blogspot.com/2012/08/how-to-parse-create-xml-documents-in.html
+For more information, see:
+- http://tshikatshikaaa.blogspot.nl/2012/08/jaxb-xml-marshalling-unmarshalling.html
+- http://tshikatshikaaa.blogspot.nl/2012/08/jaxb-json-marshalling-unmarshalling.html
+
