@@ -1,7 +1,6 @@
 
 package com.jverstry.annotations;
 
-import com.jverstry.jaxb2xml.Book;
 import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

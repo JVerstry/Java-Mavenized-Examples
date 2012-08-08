@@ -12,8 +12,8 @@ public class JaxbContextExample {
 	
 	public static void main(String[] args) throws JAXBException {
 		
+		example1();
 		example2();
-
 		
 	}
 

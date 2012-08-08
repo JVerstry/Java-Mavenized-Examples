@@ -86,16 +86,19 @@
 	</build>
 
 	<dependencies>
+
         <dependency>
             <groupId>org.sonatype.maven.plugin</groupId>
             <artifactId>emma-maven-plugin</artifactId>
             <version>1.2</version>
         </dependency>
-	 <dependency>
-	  <groupId>junit</groupId>
-	  <artifactId>junit</artifactId>
-	  <version>4.10</version>
-	 </dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+		</dependency>
+
 	</dependencies>
 
 </project>
