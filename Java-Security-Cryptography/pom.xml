@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.jverstry</groupId>
-  <artifactId>java-security</artifactId>
+  <artifactId>java-security-cryptography</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>Java-Security</name>
+  <name>Java-Security-Cryptography</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
