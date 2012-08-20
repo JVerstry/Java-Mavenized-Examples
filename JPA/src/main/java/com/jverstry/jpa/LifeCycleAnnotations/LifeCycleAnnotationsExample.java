@@ -14,7 +14,6 @@ public class LifeCycleAnnotationsExample {
 				JPA.INSTANCE.save(nlca);
 
 		System.out.println("Reading NO lifecycle annotations");
-		JPA.INSTANCE.clear();
 		NoLifeCycleAnnotations nlcaRetr =
 			JPA.INSTANCE.get(NoLifeCycleAnnotations.class, nlca.getID());
 		
@@ -34,7 +33,6 @@ public class LifeCycleAnnotationsExample {
 		JPA.INSTANCE.save(wlca);
 
 		System.out.println("Reading WITH lifecycle annotations:");
-		JPA.INSTANCE.clear();
 		WithLifeCycleAnnotations wlcaRetr =
 			JPA.INSTANCE.get(WithLifeCycleAnnotations.class, wlca.getID());
 		
