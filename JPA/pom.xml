@@ -30,7 +30,18 @@
 	</build>
 
 	<dependencies>
-
+	 <dependency>
+	  <groupId>org.pojomatic</groupId>
+	  <artifactId>pojomatic</artifactId>
+	  <version>1.0</version>
+	  <type>jar</type>
+	 </dependency>
+	 <dependency>
+	  <groupId>javax</groupId>
+	  <artifactId>javaee-api</artifactId>
+	  <version>6.0</version>
+	  <type>jar</type>
+	 </dependency>
 	</dependencies>
 
 </project>
