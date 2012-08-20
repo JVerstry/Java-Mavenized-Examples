@@ -4,10 +4,7 @@ package com.jverstry.jpa.AuthorizedTypes;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.Collection;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -37,8 +34,8 @@ public class AuthorizedTypes implements Serializable {
 	private Integer i2;
 	private long l;
 	private Long l2;
-	private short s;
-	private Short s2;
+	private short sh;
+	private Short sh2;
 	
 	// Serializable types
 	
@@ -51,6 +48,22 @@ public class AuthorizedTypes implements Serializable {
 	private char[] ca;
 	private Character[] ca2;
 
+	public short getSh() {
+		return sh;
+	}
+
+	public void setSh(short sh) {
+		this.sh = sh;
+	}
+
+	public Short getSh2() {
+		return sh2;
+	}
+
+	public void setSh2(Short sh2) {
+		this.sh2 = sh2;
+	}
+
 	public enum Color { WHITE, BLACK, RED; }
 	private Color col;
 	
@@ -61,9 +74,12 @@ public class AuthorizedTypes implements Serializable {
 	
 	private SomeEmbeddable someEmbeddable;
 	
-	private Collection<SomeEmbeddable> coll;
-    private Set<SomeEmbeddable> st;
-    private List<SomeEmbeddable> list;
+//	@OneToMany
+//	private Collection<SomeEmbeddable> coll;
+//	@OneToMany
+//    private Set<SomeEmbeddable> st;
+//	@OneToMany
+//    private List<SomeEmbeddable> list;
 	
 	@ElementCollection
     private Map<String, Serializable> mpp;
@@ -214,22 +230,6 @@ public class AuthorizedTypes implements Serializable {
 		this.l2 = l2;
 	}
 
-	public short getS() {
-		return s;
-	}
-
-	public void setS(short s) {
-		this.s = s;
-	}
-
-	public Short getS2() {
-		return s2;
-	}
-
-	public void setS2(Short s2) {
-		this.s2 = s2;
-	}
-
 	public String getStr() {
 		return str;
 	}
@@ -318,29 +318,29 @@ public class AuthorizedTypes implements Serializable {
 		this.someEmbeddable = someEmbeddable;
 	}
 
-	public Collection<SomeEmbeddable> getColl() {
-		return coll;
-	}
-
-	public void setColl(Collection<SomeEmbeddable> coll) {
-		this.coll = coll;
-	}
-
-	public Set<SomeEmbeddable> getSt() {
-		return st;
-	}
-
-	public void setSt(Set<SomeEmbeddable> st) {
-		this.st = st;
-	}
-
-	public List<SomeEmbeddable> getList() {
-		return list;
-	}
-
-	public void setList(List<SomeEmbeddable> list) {
-		this.list = list;
-	}
+//	public Collection<SomeEmbeddable> getColl() {
+//		return coll;
+//	}
+//
+//	public void setColl(Collection<SomeEmbeddable> coll) {
+//		this.coll = coll;
+//	}
+//
+//	public Set<SomeEmbeddable> getSt() {
+//		return st;
+//	}
+//
+//	public void setSt(Set<SomeEmbeddable> st) {
+//		this.st = st;
+//	}
+//
+//	public List<SomeEmbeddable> getList() {
+//		return list;
+//	}
+//
+//	public void setList(List<SomeEmbeddable> list) {
+//		this.list = list;
+//	}
 
 	public Map<String, Serializable> getMpp() {
 		return mpp;
