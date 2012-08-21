@@ -9,6 +9,10 @@ public class SomeEmbeddable implements Serializable {
 
 	private String s;
 
+	// A public constructor with
+	// no-argument is required
+	public SomeEmbeddable() { };
+	
 	public String getS() {
 		return s;
 	}

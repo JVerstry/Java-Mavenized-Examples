@@ -14,6 +14,8 @@ public class NoLifeCycleAnnotations {
 	private long ID;
 	
 	private String name = "";
+	
+	public NoLifeCycleAnnotations() { }
 
 	public long getID() {
 		return ID;

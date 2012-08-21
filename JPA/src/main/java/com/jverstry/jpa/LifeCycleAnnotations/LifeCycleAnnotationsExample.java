@@ -7,6 +7,8 @@ public class LifeCycleAnnotationsExample {
 
 	public static void main(String[] args) {
 		
+		JPA.INSTANCE.clear();
+		
 		NoLifeCycleAnnotations nlca = new NoLifeCycleAnnotations();
 		nlca.setName("AAA");
 		

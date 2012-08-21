@@ -57,6 +57,8 @@ public class WithLifeCycleAnnotations {
 	    System.out.println("Pre Update called !!!");
 	}
 	
+	public WithLifeCycleAnnotations() { }
+	
 	public long getID() {
 		return ID;
 	}

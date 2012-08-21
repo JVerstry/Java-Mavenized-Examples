@@ -11,6 +11,10 @@ public class OtherEntity implements Serializable {
 	@Id
 	private long id;
 
+	// A public constructor with
+	// no-argument is required
+	public OtherEntity() { };
+	
 	public long getId() {
 		return id;
 	}

@@ -19,6 +19,8 @@ public class Item implements Serializable {
 	
 	private String name = "";
 
+	public Item() { }
+	
 	public long getID() {
 		return ID;
 	}
