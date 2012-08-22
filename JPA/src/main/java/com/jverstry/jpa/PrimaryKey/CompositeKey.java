@@ -2,7 +2,6 @@
 package com.jverstry.jpa.PrimaryKey;
 
 import java.io.Serializable;
-import javax.persistence.Embeddable;
 import org.pojomatic.Pojomatic;
 import org.pojomatic.annotations.AutoProperty;
 

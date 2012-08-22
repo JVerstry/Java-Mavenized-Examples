@@ -12,6 +12,8 @@ public class WithEmbeddedId {
 	
 	private String data;
 
+	public WithEmbeddedId() { }
+	
 	public CompositeKey getId() {
 		return id;
 	}
