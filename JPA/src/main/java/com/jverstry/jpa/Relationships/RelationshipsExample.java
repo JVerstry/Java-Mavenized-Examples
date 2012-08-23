@@ -26,8 +26,9 @@ public class RelationshipsExample {
 		JPA.INSTANCE.clear();
 		
 		// OneToOneUnidirectional();
-		OneToOneBidirectional();
-		// OneToMany();
+		// OneToOneBidirectional();
+		OneToManyUnidirectional();
+		OneToManyBidirectional();
 		
 	}
 	
@@ -86,7 +87,7 @@ public class RelationshipsExample {
 		
 	}
 	
-	public static void OneToMany() {
+	public static void OneToManyUnidirectional() {
 		
 		OneToManyUnidirectionalA a = new OneToManyUnidirectionalA("AAA");
 		
@@ -104,11 +105,20 @@ public class RelationshipsExample {
 		OneToManyUnidirectionalA retrA
 			= JPA.INSTANCE.get(OneToManyUnidirectionalA.class, a.getId());
 		
+		System.out.println("Retriving OneToMany Unidirectional A");
 		System.out.println(retrA);
-		for (OneToManyUnidirectionalB e : retrA.getB()) {
-			System.out.println(e);
+		
+		System.out.println("Retriving OneToMany Unidirectional B's");
+		for (OneToManyUnidirectionalB origB : a.getB()) {
+			OneToManyUnidirectionalB retrB
+				= JPA.INSTANCE.get(
+					OneToManyUnidirectionalB.class, origB.getId());
+			System.out.println(retrB);
 		}
 		
+	}
+		
+	public static void OneToManyBidirectional() {
 		
 		OneToManyBidirectionalA a2 = new OneToManyBidirectionalA("BiAAA");
 		
@@ -131,7 +141,16 @@ public class RelationshipsExample {
 		OneToManyBidirectionalA retrA2
 			= JPA.INSTANCE.get(OneToManyBidirectionalA.class, a2.getId());
 		
+		System.out.println("Retriving OneToMany Bidirectional A");
 		System.out.println(retrA2);
+
+		System.out.println("Retriving OneToMany Bidirectional B's");
+		for (OneToManyBidirectionalB origB : a2.getB()) {
+			OneToManyBidirectionalB retrB
+				= JPA.INSTANCE.get(
+					OneToManyBidirectionalB.class, origB.getId());
+			System.out.println(retrB);
+		}
 		
 	}
 	
