@@ -25,12 +25,13 @@ public class RelationshipsExample {
 		
 		JPA.INSTANCE.clear();
 		
-		// OneToOneUnidirectional();
-		// OneToOneBidirectional();
-		// OneToManyUnidirectional();
-		// OneToManyBidirectional();
-		// ManyToOneUnidirectional();
+		OneToOneUnidirectional();
+		OneToOneBidirectional();
+		OneToManyUnidirectional();
+		OneToManyBidirectional();
+		ManyToOneUnidirectional();
 		ManyToOneBidirectional();
+		ManyToMany();
 		
 	}
 	
@@ -246,39 +247,81 @@ public class RelationshipsExample {
 		ManyToManyB b1 = new ManyToManyB("BB1");
 		ManyToManyB b2 = new ManyToManyB("BB2");
 
-//		a1.getListOfB().add(b1);
-//		b1.getListOfA().add(a1);
-//		
-//		a3.getListOfB().add(b1);
-//		b1.getListOfA().add(a3);
-//		
-//		a2.getListOfB().add(b2);
-//		b2.getListOfA().add(a2);
-//		
-//		a3.getListOfB().add(b2);
-//		b2.getListOfA().add(a3);
+		a1.getListOfB().add(b1);
+		b1.getListOfA().add(a1);
+		
+		a3.getListOfB().add(b1);
+		b1.getListOfA().add(a3);
+		
+		a2.getListOfB().add(b2);
+		b2.getListOfA().add(a2);
+		
+		a3.getListOfB().add(b2);
+		b2.getListOfA().add(a3);
 		
 		JPA.INSTANCE.save(a1);
 		JPA.INSTANCE.save(a2);
 		JPA.INSTANCE.save(a3);
-		JPA.INSTANCE.save(b1);
-		JPA.INSTANCE.save(b2);
 		JPA.INSTANCE.clear();
 		
+		System.out.println("Retriving ManyToMany A's and their B's");
+
 		ManyToManyA retrA1
 			= JPA.INSTANCE.get(ManyToManyA.class, a1.getId());
+		
+		System.out.println(retrA1);
+		for (ManyToManyB origB : retrA1.getListOfB()) {
+			ManyToManyB retrB
+				= JPA.INSTANCE.get(
+					ManyToManyB.class, origB.getId());
+			System.out.println(retrB);
+		} System.out.println(" ");
 		
 		ManyToManyA retrA2
 			= JPA.INSTANCE.get(ManyToManyA.class, a2.getId());
 		
+		System.out.println(retrA2);
+		for (ManyToManyB origB : retrA2.getListOfB()) {
+			ManyToManyB retrB
+				= JPA.INSTANCE.get(
+					ManyToManyB.class, origB.getId());
+			System.out.println(retrB);
+		} System.out.println(" ");
+		
 		ManyToManyA retrA3
 			= JPA.INSTANCE.get(ManyToManyA.class, a3.getId());
+		
+		System.out.println(retrA3);
+		for (ManyToManyB origB : retrA3.getListOfB()) {
+			ManyToManyB retrB
+				= JPA.INSTANCE.get(
+					ManyToManyB.class, origB.getId());
+			System.out.println(retrB);
+		} System.out.println(" ");
+		
+		System.out.println("Retriving ManyToMany B's and their A's");
 		
 		ManyToManyB retrB1
 			= JPA.INSTANCE.get(ManyToManyB.class, b1.getId());
 		
+		System.out.println(retrB1);
+		for (ManyToManyA origA : retrB1.getListOfA()) {
+			ManyToManyA retrA
+				= JPA.INSTANCE.get(
+					ManyToManyA.class, origA.getId());
+			System.out.println(retrA);
+		} System.out.println(" ");
+		
 		ManyToManyB retrB2
 			= JPA.INSTANCE.get(ManyToManyB.class, b2.getId());
+		
+		System.out.println(retrB2);
+		for (ManyToManyA origA : retrB2.getListOfA()) {
+			ManyToManyA retrA
+				= JPA.INSTANCE.get(
+					ManyToManyA.class, origA.getId());
+			System.out.println(retrA);
+		} System.out.println(" ");
 		
 	}
 	
