@@ -27,8 +27,10 @@ public class RelationshipsExample {
 		
 		// OneToOneUnidirectional();
 		// OneToOneBidirectional();
-		OneToManyUnidirectional();
-		OneToManyBidirectional();
+		// OneToManyUnidirectional();
+		// OneToManyBidirectional();
+		// ManyToOneUnidirectional();
+		ManyToOneBidirectional();
 		
 	}
 	
@@ -154,7 +156,7 @@ public class RelationshipsExample {
 		
 	}
 	
-	public static void ManyToOne() {
+	public static void ManyToOneUnidirectional() {
 		
 		ManyToOneUnidirectionalA a1 = new ManyToOneUnidirectionalA("AA1");
 		ManyToOneUnidirectionalA a2 = new ManyToOneUnidirectionalA("AA2");
@@ -172,32 +174,54 @@ public class RelationshipsExample {
 		ManyToOneUnidirectionalA retrA1
 			= JPA.INSTANCE.get(ManyToOneUnidirectionalA.class, a1.getId());
 		
+		System.out.println("Retrieving ManyToOne Unidirectional A's");
 		System.out.println(retrA1);
-		System.out.println(retrA1.getB());
 		
 		ManyToOneUnidirectionalA retrA2
 			= JPA.INSTANCE.get(ManyToOneUnidirectionalA.class, a2.getId());
 		
 		System.out.println(retrA2);
-		System.out.println(retrA2.getB());
 
-		ManyToOneUnidirectionalA retrB
-			= JPA.INSTANCE.get(ManyToOneUnidirectionalA.class, b.getId());
+		System.out.println("Retrieving ManyToOne Unidirectional B");
+		ManyToOneUnidirectionalB retrB
+			= JPA.INSTANCE.get(ManyToOneUnidirectionalB.class, b.getId());
 		
 		System.out.println(retrB);
 		
+	}
+		
+	public static void ManyToOneBidirectional() {
 		
 		ManyToOneBidirectionalA a11 = new ManyToOneBidirectionalA("BiAAA");
 		ManyToOneBidirectionalA a22 = new ManyToOneBidirectionalA("BiAAA");
 		ManyToOneBidirectionalB b2 = new ManyToOneBidirectionalB("BiBBB");
 		
+		Collection<ManyToOneBidirectionalA> c
+			= new ArrayList<ManyToOneBidirectionalA>();
+		c.add(a11);
+		c.add(a22);
+		b2.setA(c);
+		
 		a11.setB(b2);
 		a22.setB(b2);
 		
 		JPA.INSTANCE.save(b2);
-		JPA.INSTANCE.save(a11);
-		JPA.INSTANCE.save(a22);
 		JPA.INSTANCE.clear();
+
+		ManyToOneBidirectionalB retrB
+			= JPA.INSTANCE.get(ManyToOneBidirectionalB.class, b2.getId());
+		
+		System.out.println("Retrieving ManyToOne Bidirectional B");
+		System.out.println(retrB);
+		
+		for (ManyToOneBidirectionalA orig : b2.getA()) {
+			ManyToOneBidirectionalA retrA
+				= JPA.INSTANCE.get(
+					ManyToOneBidirectionalA.class, orig.getId());
+			System.out.println(retrA);
+		}		
+		
+		System.out.println("Retrieving ManyToOne Bidirectional A's");
 		
 		ManyToOneBidirectionalA retrA11
 			= JPA.INSTANCE.get(ManyToOneBidirectionalA.class, a11.getId());
@@ -210,11 +234,6 @@ public class RelationshipsExample {
 		
 		System.out.println(retrA22);
 		System.out.println(retrA22.getB());
-
-		ManyToOneBidirectionalA retrB2
-			= JPA.INSTANCE.get(ManyToOneBidirectionalA.class, b2.getId());
-		
-		System.out.println(retrB2);
 		
 	}
 	
