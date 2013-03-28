@@ -1,6 +1,4 @@
 Maven-Examples
 ==============
 
-Set of maven examples from http://tshikatshikaaa.blogspot.com/.
-
-Check corresponding posts from the menus for a description of the examples.
+A set of maven examples published at: http://technotes.tostaky.biz/.
